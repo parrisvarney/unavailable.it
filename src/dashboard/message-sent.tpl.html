@@ -1,0 +1,11 @@
+<div>
+    Congrats!  You've created a one time use link to your message.
+
+    <div class="text-block">
+        http://unavailable.it{{$stateParams.uri}}
+    </div>
+    <div class="center-text">
+        <button type="button" class="uit-button" ui-sref="dashboard.new-message">Create Another</button>
+        <button type="button" class="uit-button" ng-click="deleteMessage($stateParams.uri)">Destroy this Message</button>
+    </div>
+</div>

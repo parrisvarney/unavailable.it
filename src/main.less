@@ -1,0 +1,84 @@
+@import 'dashboard/dashboard.less';
+
+@black:  #000;
+@white:  #FFF;
+@color1: #69D2E7;
+@color2: #A7DBD8;
+@color3: #E0E4CC;
+@color4: #F38630;
+@color5: #FA6900;
+
+body {
+  background-color: @color2;
+
+  > div {
+    width: 75vh;
+    margin: 0 auto;
+  }
+}
+
+header {
+  margin-bottom: 3vh;
+}
+
+h1 {
+  font:        400 100px/1.3 'Lobster Two', Helvetica, sans-serif;
+  color:       @color5;
+  text-shadow: 1px 1px 0 #ededed, 4px 4px 0 rgba(0,0,0,0.15);
+  margin:      0;
+  line-height: 1em;
+}
+
+h5 {
+  color:     @white;
+  font-size: 25px;
+  margin:    0;
+}
+
+strong {
+  color:       @color5;
+  font-weight: bold;
+  font-style:  italic;
+}
+
+.indent {
+  padding-left: 3em;
+}
+
+.block {
+  display: block;
+}
+
+section {
+  margin: 23px 0;
+}
+
+form {
+  label {
+    display: block;
+  }
+}
+
+textarea {
+  padding:       10px;
+  width:         100%;
+  border-radius: 5px;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.list i {
+  padding: 1em;
+}
+
+.uit-button {
+  border-radius:    5px;
+  border:           2px solid @color5;
+  background-color: @color4;
+  color:            @color3;
+  padding:          8px 20px;
+  font-family:      'Lobster Two', Helvetica, sans-serif;
+  font-size:        2em;
+}

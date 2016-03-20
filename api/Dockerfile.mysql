@@ -1,0 +1,7 @@
+# Build the container
+# docker build --file Dockerfile.mysql -t db .
+#
+# Run the container
+# docker run --name db -e MYSQL_ROOT_PASSWORD=uit-not-so-secret -d db
+
+FROM mysql:5.7
