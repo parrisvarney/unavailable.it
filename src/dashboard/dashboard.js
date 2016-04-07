@@ -41,7 +41,9 @@ angular.module('dashboard.new-message', [
                     }
                 },
                 onEnter: ($stateParams, MessageModel) => {
-                    MessageModel.get($stateParams.messageId, $stateParams.password);
+                    MessageModel
+                        .get($stateParams.messageId, $stateParams.password)
+                        .catch(r => $stateParams.error = r);
                 }
             })
         ;

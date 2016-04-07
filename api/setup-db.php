@@ -28,7 +28,7 @@ $dbh->exec("
   ( account_id int unsigned auto_increment
   , email      varchar(128) not null
   , password   varchar(255) not null
-  , rate_limit varchar(32) default 'YmdH' comment 'Will block new messages until date(rate_limit) value changes'
+  , rate_limit varchar(32) default 'YmdHi' comment 'Will block new messages until date(rate_limit) value changes'
   , created    timestamp default current_timestamp
   , primary key (account_id)
   )

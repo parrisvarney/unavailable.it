@@ -1,9 +1,10 @@
 <div>
     <form>
-        <p>Creating a encrypted and self destructing message is easy.  Just enter your message in the text area below,
-        and then click the button.</p>
-        <textarea id="new-message-textarea" placeholder="Your message goes here." ng-model="newMessage.body"></textarea>
-        <div class="center-text">
+        <h4>
+            Enter a message in the textarea below, and a one time use URL will be generated.
+        </h4>
+        <textarea id="new-message-textarea" placeholder="The crow flies at dawn..." ng-model="newMessage.body"></textarea>
+        <div class="center-text button-div">
             <button type="button" class="uit-button" ng-click="saveNewMessage()">Submit.</button>
         </div>
     </form>
