@@ -7,7 +7,7 @@ or die(print_r($dbh->errorInfo(), true));
 
 $dbh->exec("CREATE DATABASE `uit`;
                 CREATE USER 'uit'@'localhost' IDENTIFIED BY 'uit-not-so-secret';
-                GRANT ALL ON `uit`.* TO 'uit'@'%';
+                GRANT ALL ON `uit`.* TO 'uit'@'localhost';
                 FLUSH PRIVILEGES;")
 or die(print_r($dbh->errorInfo(), true));
 

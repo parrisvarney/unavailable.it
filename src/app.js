@@ -30,10 +30,7 @@ angular.module('unavailable.it', [
         return {
             request: function (config) {
                 if (config.url.indexOf('/api') === 0) {
-                    config.url  = 'http://localhost:8080'+config.url.substring(4);
-                    //config.data = $.param($.extend(config.data, {
-                    //    "XDEBUG_SESSION_START": 10372
-                    //}));
+                    config.url  = 'http://unavailable.it:8080'+config.url;
                     config.data = config.paramSerializer(angular.merge(config.data ||{}, {
                         "XDEBUG_SESSION_START": 10372
                     }));
