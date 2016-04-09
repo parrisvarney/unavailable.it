@@ -4,10 +4,10 @@
 #
 # Start the container instance:
 #  cd /path/to/api/folder
-#  docker run -itd -v $PWD:/var/www/html/ -p 8080:80 --link db:mysql --name unavailable.it unavailable.it
+#  docker run -itd -v $PWD:/var/www/html/ -p 80:80 --link db:mysql --name unavailable.it unavailable.it
 #
 # Verify apache is running
-#  curl http://localhost:8080 -v
+#  curl http://localhost -v
 
 # https://hub.docker.com/_/php/
 FROM php:7-apache

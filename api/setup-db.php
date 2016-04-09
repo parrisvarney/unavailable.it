@@ -36,8 +36,8 @@ $dbh->exec("
 or die(print_r($dbh->errorInfo(), true));
 
 $dbh->exec("
-  INSERT INTO uit.account
-  SET email    = 'anon'
-  ,   password = 'unusable password'
+      INSERT INTO uit.account
+      SET email    = 'anon'
+      ,   password = 'unusable password'
 ")
 or die(print_r($dbh->errorInfo(), true));

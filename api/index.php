@@ -18,8 +18,10 @@ $app->any('/{controller}', function(ServerRequestInterface $request, ResponseInt
         $response = $response->withStatus($e->getCode());
         $response->getBody()->write(json_encode(['error' => $e->getMessage()]));
     } catch (Exception $e) {
+        $errorId = rand();
         $response = $response->withStatus(500);
-        $response->getBody()->write(json_encode(['error' => 'Uncaught error']));
+        $response->getBody()->write(json_encode(['error' => "Uncaught error #$errorId"]));
+        error_log("($errorId) {$e->getMessage()}");
     }
 
     $response = $response->withHeader('Content-type', 'application/json');
