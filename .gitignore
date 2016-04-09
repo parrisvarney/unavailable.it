@@ -1,2 +1,4 @@
 .idea
 vendor
+
+api/src/config/config.ini

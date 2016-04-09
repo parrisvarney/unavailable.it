@@ -7,11 +7,9 @@ angular.module('unavailable.it', [
         $httpProvider.defaults.headers.post = {
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'
         };
-        $httpProvider.defaults.headers.put = {};
-        $httpProvider.defaults.headers.patch = {};
-
+        $httpProvider.defaults.headers.put     = {};
+        $httpProvider.defaults.headers.patch   = {};
         $httpProvider.defaults.paramSerializer = '$httpParamSerializerJQLike';
-        //$httpProvider.defaults.transformRequest = '$httpParamSerializerJQLike';
 
         $httpProvider.interceptors.push('httpInterceptor');
 

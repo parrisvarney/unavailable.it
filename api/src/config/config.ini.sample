@@ -1,0 +1,4 @@
+[db]
+database = "uit"
+username = "root"
+password = "uit-not-so-secret"

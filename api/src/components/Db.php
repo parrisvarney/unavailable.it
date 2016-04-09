@@ -5,7 +5,11 @@ class Db {
     protected $dbh;
 
     public function __construct() {
-        $this->dbh = new \PDO('mysql:host=mysql;dbname=uit', 'root', 'uit-not-so-secret');
+        $database = Config::getDb('database');
+        $username = Config::getDb('username');
+        $password = Config::getDb('password');
+
+        $this->dbh = new \PDO("mysql:host=mysql;dbname=$database", $username, $password);
     }
 
     public function getMessage($messageId) {
