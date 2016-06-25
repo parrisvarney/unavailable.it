@@ -20,7 +20,7 @@ body > div {
   margin: 0 auto;
 }
 header {
-  margin-bottom: 3vh;
+  margin-bottom: 3em;
 }
 h1 {
   font: 400 100px/1.3 'Lobster Two', Helvetica, sans-serif;
@@ -40,7 +40,7 @@ strong {
   font-style: italic;
 }
 .indent {
-  padding-left: 3em;
+  padding-left: 2em;
 }
 .block {
   display: block;
@@ -75,12 +75,17 @@ textarea {
   font-size: 2em;
 }
 .expandable {
-  border: 3px solid black;
+  border: 1px solid #E0E4CC;
   border-radius: 6px;
-  background-color: white;
+  background-color: #E0E4CC;
   margin: 1em 0;
 }
+.expandable:hover {
+  background-color: #69D2E7;
+  border-color: #A7DBD8;
+}
 .expanded-div {
-  margin: 1em 0;
+  margin: 1em;
   font-style: italic;
+  font-size: 10pt;
 }

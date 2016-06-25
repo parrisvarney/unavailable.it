@@ -1,12 +1,8 @@
-
-
 <section>
-    <p>There are several other similar services, what makes <strong>unavailable.it</strong> unique?</p>
+    <p>What makes <strong>unavailable.it</strong> better than the million other similar sites?</p>
     <div class="list">
-        <i
-                class="fa block expandable"
-                ng-class="{'fa-chevron-right': !encryptedAtRest, 'fa-chevron-down': encryptedAtRest}"
-                ng-click="encryptedAtRest=!encryptedAtRest">
+        <div class="expandable" ng-click="encryptedAtRest=!encryptedAtRest">
+            <i class="fa" ng-class="{'fa-chevron-right': !encryptedAtRest, 'fa-chevron-down': encryptedAtRest}"></i>
             Messages are encrypted at rest.
             <div class="expanded-div" ng-if="encryptedAtRest">
                 <p>
@@ -21,10 +17,10 @@
                     doubly sucks if read messages aren't purged like they are at unavailable.it.
                 </p>
             </div>
-        </i>
-        <i class="fa fa-chevron-right block expandable"
-               ng-class="{'fa-chevron-right': !itsOpenSource, 'fa-chevron-down': itsOpenSource}"
-               ng-click="itsOpenSource=!itsOpenSource">
+
+        </div>
+        <div class="expandable" ng-click="itsOpenSource=!itsOpenSource">
+            <i class="fa" ng-class="{'fa-chevron-right': !itsOpenSource, 'fa-chevron-down': itsOpenSource}"></i>
             It's open source.
             <div class="expanded-div" ng-if="itsOpenSource">
                 <p>
@@ -37,10 +33,9 @@
                     and you can run this site on your own.
                 </p>
             </div>
-        </i>
-        <i class="fa fa-chevron-right block expandable"
-           ng-class="{'fa-chevron-right': !itsFree, 'fa-chevron-down': itsFree}"
-           ng-click="itsFree=!itsFree">
+        </div>
+        <div class="expandable" ng-click="itsFree=!itsFree">
+            <i class="fa" ng-class="{'fa-chevron-right': !itsFree, 'fa-chevron-down': itsFree}"></i>
             It's free!
             <div class="expanded-div" ng-if="itsFree">
                 <p>
@@ -52,7 +47,7 @@
                     We'll start talking paid services once we need more than a t2.micro.
                 </p>
             </div>
-        </i>
+        </div>
     </div>
 
     <div class="center-text">

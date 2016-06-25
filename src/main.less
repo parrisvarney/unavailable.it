@@ -18,7 +18,7 @@ body {
 }
 
 header {
-  margin-bottom: 3vh;
+  margin-bottom: 3em;
 }
 
 h1 {
@@ -42,7 +42,7 @@ strong {
 }
 
 .indent {
-  padding-left: 3em;
+  padding-left: 2em;
 }
 
 .block {
@@ -88,13 +88,19 @@ textarea {
 }
 
 .expandable {
-  border:           3px solid black;
+  border:           1px solid @color3;
   border-radius:    6px;
-  background-color: white;
+  background-color: @color3;
   margin:           1em 0;
+
+  &:hover {
+    background-color: @color1;
+    border-color:     @color2;
+  }
 }
 
 .expanded-div {
-  margin:     1em 0;
+  margin:     1em;
   font-style: italic;
+  font-size:  10pt;
 }
