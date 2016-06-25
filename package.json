@@ -1,0 +1,14 @@
+{
+  "author": "Parris Varney",
+  "name": "unavailable.it",
+  "version": "1.0.1",
+  "homepage": "https://github.com/parrisvarney/unavailable.it",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-cli":            "1.2.1",
+    "gulp":                "3.9.1",
+    "gulp-babel":          "6.1.2",
+    "babel-preset-es2015": "6.9.0",
+    "gulp-less":           "3.1.0"
+  }
+}
