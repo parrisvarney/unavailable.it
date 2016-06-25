@@ -3,9 +3,56 @@
 <section>
     <p>There are several other similar services, what makes <strong>unavailable.it</strong> unique?</p>
     <div class="list">
-        <i class="fa fa-asterisk block"><strong> Messages are encrypted at rest.</strong></i>
-        <i class="fa fa-asterisk block"> It's <a href="#">open source</a>.</i>
-        <i class="fa fa-asterisk block"> It's free for casual users, and inexpensive for subscription users.</i>
+        <i
+                class="fa block expandable"
+                ng-class="{'fa-chevron-right': !encryptedAtRest, 'fa-chevron-down': encryptedAtRest}"
+                ng-click="encryptedAtRest=!encryptedAtRest">
+            Messages are encrypted at rest.
+            <div class="expanded-div" ng-if="encryptedAtRest">
+                <p>
+                    Unread messages are encrypted in the database using part of the URL as the deryption key.
+                    This means that if anybody gains access to our database, whether through hacking, legal supoena, or
+                    careless code, then your message is still unavailable.
+                </p>
+                <p>
+                    This is in contrast to systems that are encrypted only in transit.  These systems will store your
+                    messagein plain text and only encrypt them while they're being transmitted to the desired recipient.
+                    This means that anybody that gains access to the database can read every saved message.  This
+                    doubly sucks if read messages aren't purged like they are at unavailable.it.
+                </p>
+            </div>
+        </i>
+        <i class="fa fa-chevron-right block expandable"
+               ng-class="{'fa-chevron-right': !itsOpenSource, 'fa-chevron-down': itsOpenSource}"
+               ng-click="itsOpenSource=!itsOpenSource">
+            It's open source.
+            <div class="expanded-div" ng-if="itsOpenSource">
+                <p>
+                    <a href="https://github.com/parrisvarney/unavailable.it">Anybody can download the source code and
+                        verify it's secure.</a>
+                </p>
+                <p>
+                    Don't trust us with your data?  You shouldn't.  That's why this site is completely open source
+                    including Dockerfiles and build files.  All you need is a computer that can serve HTTP
+                    and you can run this site on your own.
+                </p>
+            </div>
+        </i>
+        <i class="fa fa-chevron-right block expandable"
+           ng-class="{'fa-chevron-right': !itsFree, 'fa-chevron-down': itsFree}"
+           ng-click="itsFree=!itsFree">
+            It's free!
+            <div class="expanded-div" ng-if="itsFree">
+                <p>
+                    The endgame is to have a paid service which allows unthrottled message sending.  In hopes to
+                    prevent spam, users are currently only allowed one message per minute.  But for now, and for
+                    the foreseeable future, this site is free.
+                </p>
+                <p>
+                    We'll start talking paid services once we need more than a t2.micro.
+                </p>
+            </div>
+        </i>
     </div>
 
     <div class="center-text">

@@ -22,5 +22,10 @@ gulp.task('less', () => {
         .pipe(gulp.dest('build'));
 });
 
+gulp.task('watch', () => {
+   return gulp
+       .watch('src/**/*.*', ['default'])
+});
+
 
 gulp.task('default', ['babel', 'less']);
