@@ -52,6 +52,10 @@ angular.module('dashboard.new-message', ['ui.router', 'dashboard.model.message']
         });
     };
 
+    $scope.restart = function () {
+        return $state.go('dashboard.about');
+    };
+
     $scope.deleteMessage = function (uri) {
         var uriParts = uri.split('/'),
             password = uriParts.pop(),

@@ -64,6 +64,10 @@ angular.module('dashboard.new-message', [
                 });
         };
 
+        $scope.restart = () => {
+            return $state.go('dashboard.about')
+        };
+
         $scope.deleteMessage = uri => {
             let uriParts  = uri.split('/'),
                 password  = uriParts.pop(),

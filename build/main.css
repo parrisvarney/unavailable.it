@@ -74,6 +74,18 @@ textarea {
   font-family: 'Lobster Two', Helvetica, sans-serif;
   font-size: 2em;
 }
+.uit-button-cancel {
+  border-radius: 5px;
+  border: 2px solid #FA6900;
+  background-color: #F38630;
+  color: #E0E4CC;
+  padding: 8px 20px;
+  font-family: 'Lobster Two', Helvetica, sans-serif;
+  font-size: 2em;
+  background-color: #E0E4CC;
+  border-color: #ccd2ab;
+  color: #FFF;
+}
 .expandable {
   border: 1px solid #E0E4CC;
   border-radius: 6px;
