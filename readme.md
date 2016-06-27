@@ -9,12 +9,12 @@ Website for creating secure, one-time-use messages through the internet.
 1. Setup script for the database
 
 ## This repo requires
-1. An es6 compatible browser
+1. ~~An es6 compatible browser~~ (we babel now)
 1. A computer that can build docker files
 1. bower
 1. composer
+1. npm
 
 ### TODO
 1. Refactor Angular code, make less compatible with ES5. <-- Suck it old people
 1. Write better information stuff, like the default lander, and some instructions
-1. Make a closed-source member's area.
