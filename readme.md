@@ -16,5 +16,6 @@ Website for creating secure, one-time-use messages through the internet.
 1. npm
 
 ### TODO
+1. Get a damn cert (like tomorrow)
 1. Refactor Angular code, make less compatible with ES5. <-- Suck it old people
 1. Write better information stuff, like the default lander, and some instructions
