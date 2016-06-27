@@ -6,15 +6,10 @@
             Messages are encrypted at rest.
             <div class="expanded-div" ng-if="encryptedAtRest">
                 <p>
-                    Unread messages are encrypted in the database using part of the URL as the deryption key.
-                    This means that if anybody gains access to our database, whether through hacking, legal supoena, or
-                    careless code, then your message is still unavailable.
-                </p>
-                <p>
-                    This is in contrast to systems that are encrypted only in transit.  These systems will store your
-                    messagein plain text and only encrypt them while they're being transmitted to the desired recipient.
-                    This means that anybody that gains access to the database can read every saved message.  This
-                    doubly sucks if read messages aren't purged like they are at unavailable.it.
+                    All messages are stored in our database and encrypted with a key that only you have (your url).
+                    <strong>We don't retain the key for your message</strong>.
+                    This means that if anybody gains access to our database, whether through hacking, legal supoena,
+                    blackmail, etc, then your message is still secure.  We couldn't decrypt it even if we wanted to.
                 </p>
             </div>
 
@@ -39,12 +34,11 @@
             It's free!
             <div class="expanded-div" ng-if="itsFree">
                 <p>
-                    The endgame is to have a paid service which allows unthrottled message sending.  In hopes to
-                    prevent spam, users are currently only allowed one message per minute.  But for now, and for
-                    the foreseeable future, this site is free.
+                    One day we might have a paid "premium" service, but we don't now, and the core service will
+                    always be free.
                 </p>
                 <p>
-                    We'll start talking paid services once we need more than a t2.micro.
+                    We'll start talking premium services if the site ever becomes a financial burden to maintain.
                 </p>
             </div>
         </div>
