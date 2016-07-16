@@ -95,6 +95,13 @@ textarea {
 .expandable:hover {
   background-color: #69D2E7;
   border-color: #A7DBD8;
+  cursor: pointer;
+}
+.big-font {
+  font-size: 22px;
+}
+.light-font {
+  color: #404040;
 }
 .expanded-div {
   margin: 1em;

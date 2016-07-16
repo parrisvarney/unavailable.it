@@ -2,7 +2,7 @@
     <h4>Your message</h4>
 
     <div class="text-block">
-        {{MessageModel.message.message || $stateParams.error}}
+        {{vm.MessageModel.message.message || vm.$stateParams.error}}
     </div>
     <div class="center-text">
         <button type="button" class="uit-button" ui-sref="dashboard.new-message">Send Another.</button>

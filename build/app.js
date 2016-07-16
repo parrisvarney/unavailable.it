@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('unavailable.it', ['ui.router', 'dashboard.new-message']).config(['$httpProvider', '$stateProvider', '$urlRouterProvider', function ($httpProvider, $stateProvider, $urlRouterProvider) {
+angular.module('unavailable.it', ['ui.router', 'dashboard']).config(['$httpProvider', '$stateProvider', '$urlRouterProvider', function ($httpProvider, $stateProvider, $urlRouterProvider) {
     $httpProvider.defaults.headers.common = {};
     $httpProvider.defaults.headers.post = {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8'

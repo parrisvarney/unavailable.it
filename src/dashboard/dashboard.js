@@ -1,86 +1,44 @@
 'use strict';
-angular.module('dashboard.new-message', [
-        'ui.router',
-        'dashboard.model.message'
-    ])
-    .config(['$stateProvider', ($stateProvider) => {
-        $stateProvider
-            .state('dashboard.about', {
-                url: '/about',
-                views: {
-                    body: {
-                        controller:  'DashboardController',
-                        templateUrl: 'src/dashboard/about.tpl.html'
-                    }
-                }
-            })
-            .state('dashboard.new-message', {
-                url: '/new',
-                views: {
-                    body: {
-                        controller:  'DashboardController',
-                        templateUrl: 'src/dashboard/new-message.tpl.html'
-                    }
-                }
-            })
-            .state('dashboard.message-sent', {
-                url: '/message-sent/:uri',
-                views: {
-                    body: {
-                        controller:  'DashboardController',
-                        templateUrl: 'src/dashboard/message-sent.tpl.html'
-                    }
-                }
-            })
-            .state('dashboard.open-message', {
-                url: '/open-message/:messageId/:password',
-                views: {
-                    body: {
-                        controller:  'DashboardController',
-                        templateUrl: 'src/dashboard/open-message.tpl.html'
-                    }
-                },
-                onEnter: ($stateParams, MessageModel) => {
-                    MessageModel
-                        .get($stateParams.messageId, $stateParams.password)
-                        .catch(r => $stateParams.error = r);
-                }
-            })
-        ;
-    }])
-    .controller('DashboardController', ['$scope', '$stateParams', '$state', 'MessageModel', function ($scope, $stateParams, $state, MessageModel) {
-        $scope.MessageModel  = MessageModel;
-        $scope.newMessage    = {};
-        $scope.$stateParams  = $stateParams;
+class DashboardController {
+    constructor($state, $stateParams, MessageModel) {
+        this.$state       = $state;
+        this.$stateParams = $stateParams;
+        this.MessageModel = MessageModel;
+    }
 
-        $scope.saveNewMessage = () => {
-            return MessageModel
-                .create($scope.newMessage.body)
-                .then(message => {
-                    $state.go('dashboard.message-sent', {uri: "/open-message/"+message.message.message_id+"/"+message.password});
-                })
-                .catch(e => {
-                    alert(e);
+    saveNewMessage(messageBody) {
+        return this.MessageModel
+            .create(messageBody)
+            .then(message => {
+                this.$state.go('dashboard.message-sent', {
+                    uri: "/open-message/"+message.message.message_id+"/"+message.password
                 });
-        };
+            })
+            .catch(e => {
+                alert(e);
+            });
+    }
 
-        $scope.restart = () => {
-            return $state.go('dashboard.about')
-        };
+    deleteMessage(uri) {
+        let uriParts  = uri.split('/'),
+            password  = uriParts.pop(),
+            messageId = uriParts.pop();
 
-        $scope.deleteMessage = uri => {
-            let uriParts  = uri.split('/'),
-                password  = uriParts.pop(),
-                messageId = uriParts.pop();
+        return this.MessageModel
+            .destroy(messageId, password)
+            .then(() => {
+                this.$state.go('dashboard.new-message');
+            })
+            .catch(e => {
+                alert(e);
+            });
+    }
 
-            return MessageModel
-                .delete(messageId, password)
-                .then(() => {
-                    $state.go('dashboard.new-message');
-                })
-                .catch(e => {
-                    alert(e);
-                });
-        }
-    }])
-;
+    restart() {
+        return this.$state.go('dashboard.about')
+    }
+}
+
+angular.module('dashboard', [
+    'dashboard.model.message'
+]).controller('DashboardController', DashboardController);
