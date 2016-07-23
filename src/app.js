@@ -28,7 +28,7 @@ angular.module('unavailable.it', [
         return {
             request: function (config) {
                 if (config.url.indexOf('/api') === 0) {
-                    config.url  = 'http://unavailable.it'+config.url;
+                    config.url  = '//unavailable.it'+config.url;
                     config.data = config.paramSerializer(angular.merge(config.data ||{}, {
                         "XDEBUG_SESSION_START": 10372
                     }));
