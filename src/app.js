@@ -1,6 +1,6 @@
 angular.module('unavailable.it', [
     'ui.router',
-    'dashboard.new-message'
+    'dashboard'
 ])
     .config(['$httpProvider', '$stateProvider', '$urlRouterProvider', ($httpProvider, $stateProvider, $urlRouterProvider) => {
         $httpProvider.defaults.headers.common = {};
