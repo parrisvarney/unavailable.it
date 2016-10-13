@@ -9,6 +9,9 @@
 #
 # Make site HTTPS
 #  docker exec -it unavailable.it bash -c './letsencrypt.sh'
+#
+# Renew cert
+#  docker exec unavailable.it certbot renew
 
 # https://hub.docker.com/_/php/
 FROM php:7-apache
